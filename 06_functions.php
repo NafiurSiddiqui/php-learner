@@ -1,4 +1,5 @@
 <?php
+
 //REMEMBER: global variable and fucntional variables are scoped. you can not access to each other. only way you can access to a global variable is with GLOBAL keyword.
 
 $y = 23;
@@ -33,4 +34,4 @@ $y = 23;
 $multiply = fn($n1, $n2) => $n1 * $n2;
 
 
-echo $multiply(9,9);
+// echo $multiply(9,9);
