@@ -16,7 +16,7 @@ if(isset($_POST['submit'])){
 
     echo $username;
 
-    if($username == 'dumb' && $password == '1234'){
+    if($username == 'Nafi' && $password == 'password'){
      
 
         $_SESSION['username'] = $username;
