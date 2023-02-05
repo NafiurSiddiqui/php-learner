@@ -1,66 +1,99 @@
+<!-- EXAMPLE: 1 -->
+
 <?php
 
 
-//if form submitted
 
-if(isset($_POST['submit'])){
+// if(isset($_POST['submit'])){
 
-    if(!empty($_FILES['upload']['name'])){
+//     if(!empty($_FILES['upload']['name'])){
 
-        //check for image
+//         //check for image
 
-        $allowed_ext = array('png', 'jpg', 'jpeg', 'gif');
+//         $allowed_ext = array('png', 'jpg', 'jpeg', 'gif');
 
-        //check what the file contains
-        // print_r($_FILES);
+//         //check what the file contains
+//         // print_r($_FILES);
 
-        //let destrucutre the files.
-        $file_name = $_FILES['upload']['name'];
-        $file_size= $_FILES['upload']['size'];
-        $file_tmp = $_FILES['upload']['tmp_name'];
-        //where do  you wanna upload?       
-        $target_dir = "uploads/$file_name";
+//         //let destrucutre the files.
+//         $file_name = $_FILES['upload']['name'];
+//         $file_size= $_FILES['upload']['size'];
+//         $file_tmp = $_FILES['upload']['tmp_name'];
 
-
-        //GET THE FILE EXTENSION
-
-        $file_ext = explode('.', $file_name);
-        $file_ext = strtolower(end($file_ext));
-
-        //echo out the ext[ TEST]
-
-        // echo $file_ext;
-
-        //VALIDATE
-
-        if(in_array($file_ext, $allowed_ext)){
-
-            //LIMIT the file size as well
-
-            if($file_size <= 3000000){
-
-                //upload the file
-
-                move_uploaded_file($file_tmp, $target_dir);
-                 $message = '<p style="color:green"> Succesfully uploaded! </p>';
-            }else{
-                 $message = '<p style="color:red;"> File is too large! </p>';
-            }
-
-        }else{
-             $message = '<p style="color:red;"> Invalid file type </p>';
-        }
+//         //where do  you wanna upload?       
+//         $target_dir = "uploads/$file_name";
 
 
+//         //GET THE FILE EXTENSION
+
+//         $file_ext = explode('.', $file_name);
+//         $file_ext = strtolower(end($file_ext));
+
+//         //echo out the ext[ TEST]
+
+//         echo $file_name;
+
+//         echo $file_ext;
+
+//         //VALIDATE
+
+//         if(in_array($file_ext, $allowed_ext)){
+
+//             //LIMIT the file size as well
+
+//             if($file_size <= 3000000){
+
+//                 //upload the file
+
+//                 move_uploaded_file($file_tmp, $target_dir);
+//                  $message = '<p style="color:green"> Succesfully uploaded! </p>';
+//             }else{
+//                  $message = '<p style="color:red;"> File is too large! </p>';
+//             }
+
+//         }else{
+//              $message = '<p style="color:red;"> Invalid file type </p>';
+//         }
 
 
-    }else{
-        $message = '<p style="color:red;"> Please choose a file</p>';
 
-    }
-}
+
+//     }else{
+//         $message = '<p style="color:red;"> Please choose a file</p>';
+
+//     }
+// }
+
+
+
+
+
+
+//* EXAMPLE : 2 (make sure to comment out example 1)
+
+
+//upload destination
+
+$uploadDir = "./uploads";
+
+//file to upload
+$image = $uploadDir . basename($_FILES["upload"]["name"]);
+
+//get the type
+
+$fileType = pathinfo($image, FILEINFO_EXTENSION);
+
+
+
+
+
+
+
 
 ?>
+
+
+
 
 
 
