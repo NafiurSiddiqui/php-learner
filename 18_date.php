@@ -19,6 +19,10 @@
      $BdTime = date("H:i:s ");
 
     echo $BdTime;
+
+    //* There are alos other functions out there
+
+    //CHECK OUT w3Schools/php/date section for more
     
   
 
