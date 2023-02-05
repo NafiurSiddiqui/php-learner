@@ -1,8 +1,7 @@
-<!-- EXAMPLE: 1 -->
 
 <?php
 
-
+// * EXAMPLE 1 . Better one.
 
 // if(isset($_POST['submit'])){
 
@@ -66,23 +65,59 @@
 
 
 
-
-
-
-//* EXAMPLE : 2 (make sure to comment out example 1)
+//* EXAMPLE : 2 (Not a good one but shows you some of the ways it can be validated )
 
 
 //upload destination
 
-$uploadDir = "./uploads";
+// $uploaded_dir = "./uploads";
 
-//file to upload
-$image = $uploadDir . basename($_FILES["upload"]["name"]);
+// //file to upload
+// $uploaded_image = $uploaded_dir . basename($_FILES["upload"]["name"]);
 
-//get the type
+// //get the type
 
-$fileType = pathinfo($image, FILEINFO_EXTENSION);
+// $fileType = pathinfo($uploaded_image, FILEINFO_EXTENSION);
 
+// //success flag
+// $uploadOk = 1;
+
+// $check = null;
+
+// //Validate
+
+// if(isset($_POST['submit'])){
+    
+//     //GET IMAGE SIZE
+
+//     $check = getimagesize($_FILES["upload"]["tmp_name"]);
+
+
+//     //Check if it is a image
+//     if($check !== false){
+
+//         echo 'Great. File is an '. $check["mime"];
+//         $uploadOk = 1;
+//     }else{
+//         echo 'Please upload an image file';
+//         $uploadOk = 0;
+//     }
+
+// }
+
+//   //If file exists
+
+//     if(file_exists($uploaded_image)){
+//         echo "File already exists";
+//         $uploadOk = 0;
+//     }
+
+//     //Check for file size
+//     if($_FILES["upload"]["size"] > 00000){
+//         echo "too large! select image below 5MB";
+//         $uploadOk = 0;
+//     }
+   
 
 
 
