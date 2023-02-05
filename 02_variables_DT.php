@@ -39,7 +39,6 @@ echo DB_NAME;
 
 
 
-//* ----- DATA TYPES
 
 
 
