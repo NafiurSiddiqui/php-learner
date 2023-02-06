@@ -24,7 +24,7 @@ if(isset($_POST['submit'])){
    
         //Redirect page
 
-        header('Location: /Php-Traversy/extras/dashboard.php');
+        header('Location: extras/dashboard.php');
     }else{
         echo 'Invalid login';
     }

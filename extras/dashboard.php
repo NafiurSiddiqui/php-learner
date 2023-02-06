@@ -12,6 +12,6 @@
         echo '<a href="logout.php">Log out</a>';
     }else{
         echo "<h1>Hello Guest!</h1>";
-        echo '<a href="/Php-Traversy/13_sessions.php" > Home </a>';
+        echo '<a href="../13_sessions.php" > Home </a>';
 
     };

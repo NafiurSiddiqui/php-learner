@@ -65,7 +65,7 @@
 
 
 
-//* EXAMPLE : 2 (Not a good one but shows you some of the ways it can be validated )
+//* EXAMPLE : 2 (Has come errors and warning, but shows you some of the ways it can be validated and error goes away upon submission )
 
 
 //upload destination
@@ -118,9 +118,6 @@
 //         $uploadOk = 0;
 //     }
    
-
-
-
 
 
 

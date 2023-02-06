@@ -2,7 +2,12 @@
 
 session_start();
 
+//You can also remove the variables
+
+session_unset();
+
+//Destroy
 session_destroy();
 
 
-header('Location: /Php-Traversy/13_sessions.php');
+header('Location: ../13_sessions.php ');
