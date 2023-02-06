@@ -21,12 +21,17 @@
     echo inverse(0);
  } catch (Exception $e) {
     
-    echo 'Caught Exception', $e->getMessage(), ' ';
+   //  echo ' Caught Exception', $e->getMessage(), ' ';
+   $msg = $e->getMessage();
+   $code = $e->getCode();
+   $line = $e->getLine();
+   
+   echo "Caught exception on line $line with $code . Message: $msg ";
  }finally{
     //when we need to execute anyway after first error.
-    echo 'First finally.';
+    echo '<br> First finally.';
  }
 
  //NOW SCRIPT DOES NOT BREAK
- echo 'Hello World';
+ echo '<br> Hello World';
  
