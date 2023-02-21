@@ -1,112 +1,110 @@
 <?php
 
-    $fruits = [ 'apple', 'orange', 'banana'];
+$fruits = ['apple', 'orange', 'banana'];
 
 
-    //*----------GET LENGTH
+//*----------GET LENGTH
 
-    // echo count($fruits);
-
-
-    //*---------SEARCH ARRAY
-
-    // var_dump(in_array('orange', $fruits));
+// echo count($fruits);
 
 
-    //*------ ADD TO ARRAY
+//*---------SEARCH ARRAY
 
-    $fruits[] = 'grape';
-
-    //or we  can push
-
-    array_push($fruits, 'blueberry', 'strawberry');
-    array_unshift($fruits, 'mango');
+// var_dump(in_array('orange', $fruits));
 
 
-    //*------- REMOVE from array
+//*------ ADD TO ARRAY
 
-    //LAST ITEM
-    array_pop($fruits);
+$fruits[] = 'grape';
 
-    //BEGINNING
+//or we  can push
 
-    array_shift($fruits);
-
-    //Certain Index and value
-
-    unset($fruits[2]); //THIS REMOVES INDEX AS WELL.
-
-    // print_r($fruits);
-
-    //*--------- breaking into chunks
-
-    $chunked_array = array_chunk($fruits, 2);
-
-    // print_r($chunked_array);
+array_push($fruits, 'blueberry', 'strawberry');
+array_unshift($fruits, 'mango');
 
 
-    //*-------- CONCAT ARRAY
+//*------- REMOVE from array
 
-    $arr1 = [1,2,3];
-    $arr2 = [4, 5,6];
+//LAST ITEM
+array_pop($fruits);
 
-    $arrMerged = array_merge($arr1, $arr2);
-    $arr4 = [...$arr1, ...$arr2];
+//BEGINNING
 
-    // print_r($arrMerged);
-    // print_r($arr4);
+array_shift($fruits);
 
+//Certain Index and value
 
-    //*--------- COMBINE
+unset($fruits[2]); //THIS REMOVES INDEX AS WELL.
 
-    $a = ['green', 'red', 'yellow'];
-    $b = ['Guava', ' pommegranate', 'banana'];
+// print_r($fruits);
 
-    $c = array_combine($a, $b);
+//*--------- breaking into chunks
 
-    // print_r($c);
+$chunked_array = array_chunk($fruits, 2);
 
-    //*------- Array of KEYS
-
-    $keys = array_keys($c);
-
-    // print_r($keys);
-
-    
-
-    //*------------ FLIP array
-    //key becomes values, value becomes key
-
-    $arrFlipped = array_flip($c);
-
-    // print_r($arrFlipped); 
-
-    //*------------------ array of numbers
-
-    $arrNumbers = range(1, 20); 
-
-    // print_r($arrNumbers);
-
-    //*----------------- Map arrays
-
-    $newNumbers = array_map(function($number){
-
-        return "Number $number";
-    }, $arrNumbers);
-
-    // print_r($newNumbers);
-
-    //*--------------- Filter
-
-    $lessThan10 = array_filter($arrNumbers, fn($number) => $number < 10);
-
-    // print_r($lessThan10);
+// print_r($chunked_array);
 
 
-    //*--------------- REDUCE
+//*-------- CONCAT ARRAY
 
-    $sum = array_reduce($arrNumbers, fn($carry, $number) => $carry + $number);
+$arr1 = [1, 2, 3];
+$arr2 = [4, 5, 6];
 
-    var_dump($sum);
+$arrMerged = array_merge($arr1, $arr2);
+$arr4 = [...$arr1, ...$arr2];
+
+// print_r($arrMerged);
+// print_r($arr4);
 
 
+//*--------- COMBINE
+
+$a = ['green', 'red', 'yellow'];
+$b = ['Guava', ' pommegranate', 'banana'];
+
+$c = array_combine($a, $b);
+
+// print_r($c);
+
+//*------- Array of KEYS
+
+$keys = array_keys($c);
+
+// print_r($keys);
+
+
+
+//*------------ FLIP array
+//key becomes values, value becomes key
+
+$arrFlipped = array_flip($c);
+
+// print_r($arrFlipped); 
+
+//*------------------ array of numbers
+
+$arrNumbers = range(1, 20); //FILSS in the array with these numbers
+
+// print_r($arrNumbers);
+
+//*----------------- Map arrays
+
+$newNumbers = array_map(function ($number) {
+
+    return "Number $number";
+}, $arrNumbers);
+
+// print_r($newNumbers);
+
+//*--------------- Filter
+
+$lessThan10 = array_filter($arrNumbers, fn ($number) => $number < 10);
+
+// print_r($lessThan10);
+
+
+//*--------------- REDUCE
+
+$sum = array_reduce($arrNumbers, fn ($carry, $number) => $carry + $number);
+
+// var_dump($sum);
