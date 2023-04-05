@@ -120,7 +120,7 @@ $sum = array_reduce($arrNumbers, fn ($carry, $number) => $carry + $number);
 // String keys that can be cast to integers will be cast to integers.
 // String keys that cannot be cast to integers will be used as strings.
 
-$arrTest = [true => 'a', false => 'b', '1'=> 'c', true => 'd'];
+$arrTest = [true => 'a', false => 'b', '1'=> null, true => 'd'];
 
 /*
   in this case,
@@ -134,4 +134,14 @@ $arrTest = [true => 'a', false => 'b', '1'=> 'c', true => 'd'];
 
  */
 
-print_r($arrTest);
+// print_r($arrTest);
+
+//* TESTING KEYS
+
+$arrTest2 = [true => 'a', false => 'b', '1'=> null];
+
+
+
+var_dump(array_key_exists('1', $arrTest2));//RETURNS TRUE
+
+var_dump(isset($arrTest2['1'])); //HERE RETURN FALSE because the value is null.
