@@ -17,6 +17,11 @@ $age = 31;
 $has_kids = true;
 $cash_stored = 2000.59;
 
+$boolType = (bool)'';
+
+// echo var_dump($boolType);
+
+
 // echo $has_kids; // Prints out 1 if true. Nothing if 0
 
 // var_dump($has_kids); //Useful in this case;
@@ -34,11 +39,28 @@ $cash_stored = 2000.59;
 define('HOST', 'localhost');
 define('DB_NAME', 'my_DB');
 
-echo HOST;
-echo DB_NAME;
+// echo HOST;
+// echo DB_NAME;
 
 
 
+//* Type Casting
+
+$itemQty = (int) 5;
+$itemTotal = (float) $itemQty;
+
+// echo var_dump($itemQty);
+// '<br>';
+// echo var_dump($itemTotal); //Only the $itemTotal type changed. Not the Qty.
+// '<br>';
 
 
+//* variable varialbes
 
+echo $itemQty. '<br>'; //5
+
+$newItemQty = 'itemQty';
+
+$$newItemQty = 7;
+
+echo $itemQty.'<br>'; //7

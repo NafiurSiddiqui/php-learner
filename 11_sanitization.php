@@ -15,11 +15,11 @@
 // }
 
 
-//*----- or  use PHP filers like, filter_input and more. 
-if(isset($_POST['submit'])){
+//*----- or  use PHP filters like, filter_input and more. 
+if (isset($_POST['submit'])) {
 
     $name = filter_input(INPUT_POST, 'name', FILTER_SANITIZE_SPECIAL_CHARS);
-    $age= filter_input(INPUT_POST, 'age', FILTER_SANITIZE_SPECIAL_CHARS);
+    $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_SPECIAL_CHARS);
 
     //we can also sanitize variables by htmlspecialchars, previously filter_Var was used.
 
@@ -44,15 +44,15 @@ if(isset($_POST['submit'])){
 <!-- By default it is GET but use POST anytime you want to submit any value -->
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
-<div>
-    <label for="name">Name:</label>
-    <input type="text" name="name">
-</div>
-<br>
-<div>
-    <label for="age">age</label>
-    <input type="text" name="age">
-</div>
-<br>
-<input type="submit" value="submit" name="submit">
+    <div>
+        <label for="name">Name:</label>
+        <input type="text" name="name">
+    </div>
+    <br>
+    <div>
+        <label for="age">age</label>
+        <input type="text" name="age">
+    </div>
+    <br>
+    <input type="submit" value="submit" name="submit">
 </form>
