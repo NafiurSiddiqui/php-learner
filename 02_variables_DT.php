@@ -34,10 +34,13 @@ $boolType = (bool)'';
 
 // echo "$Name is $age years old" ;
 
-//--- FOR CONSTANT
+//*--- CONSTANT vars
 
 define('HOST', 'localhost');
 define('DB_NAME', 'my_DB');
+
+
+
 
 // echo HOST;
 // echo DB_NAME;
@@ -57,10 +60,48 @@ $itemTotal = (float) $itemQty;
 
 //* variable varialbes
 
-echo $itemQty. '<br>'; //5
+// echo $itemQty. '<br>'; //5
 
-$newItemQty = 'itemQty';
+// $newItemQty = 'itemQty';
 
-$$newItemQty = 7;
+// $$newItemQty = 7;
 
-echo $itemQty.'<br>'; //7
+// echo $itemQty.'<br>'; //7
+
+
+//* Superglobals
+
+// $_GET - Contains information about variable passed through a URL or a form
+
+// $_POST - Contains information about variable passed through a form.
+
+// $_SERVER - Infromation about the server environment.
+
+// $_REQUEST - inforamtion about the vars possed through the
+
+// $_FILES - Information about files uploaded to the script.
+
+// $_ENV - Contains information about the environment variables.
+
+// $_COOKIE - information about cookies.
+
+// $_SESSION - conatins information about variable passed through a session.
+
+
+// var_dump($_COOKIE);
+
+
+//* Reference operator
+
+$a = 5;
+$b = $a; //a copy of $a is made
+// $b = &$a; //both pointing to the same block of memory.
+
+
+
+$a = 7; //changing a does not affect B unless we user ref operator.
+
+// $b = $a;
+
+// echo var_dump($a) . '<br>' ;
+// echo var_dump($b) . '<br>' ;
