@@ -1,6 +1,6 @@
 <?php
 
-//SIMPLE ARRAY
+//*SIMPLE ARRAY
 
 $numbers = [1,2,3,4];
 
@@ -9,7 +9,7 @@ $fruits = array('Apple', 'Oranges') ;
 // print_r($numbers);
 
 
-//------- ASSOCIATIVE ARRAY
+//*------- ASSOCIATIVE ARRAY
 
 
 //EXAMPLE 1
@@ -43,7 +43,7 @@ $person = [
 // echo $person['email'] ;
 
 
-//------- MULTIDIMENSIONAL ARRAYS
+//*------- MULTIDIMENSIONAL ARRAYS
 
 
 $users = [
@@ -70,4 +70,3 @@ echo $users[2]['email'];
 //*A LOT of time we write APIs and we can turn this into JSON format like this.
 
 // var_dump(json_encode($users));
-

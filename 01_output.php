@@ -28,21 +28,45 @@
 
     //👆 These are mostly used for debugging.
 
+
+    //* HEREDOC
+
+    //FOR MULTILINE STRING
+
+    $text = <<<text
+    line:1
+    line:2
+    line:3
+
+
+
+    text;
+
+echo nl2br($text);
+
+
+
+
+//* NOWDOC
+
     
-    
-    ?>
+
+?>
 
 <!-- //*single line print -->
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1><?= 'Aha' ?>  </h1>
-</body>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <h1><?= 'Aha' ?> </h1>
+    </body>
+
 </html>

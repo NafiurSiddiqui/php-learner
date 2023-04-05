@@ -79,7 +79,7 @@ $keys = array_keys($c);
 
 $arrFlipped = array_flip($c);
 
-// print_r($arrFlipped); 
+// print_r($arrFlipped);
 
 //*------------------ array of numbers
 
@@ -108,3 +108,30 @@ $lessThan10 = array_filter($arrNumbers, fn ($number) => $number < 10);
 $sum = array_reduce($arrNumbers, fn ($carry, $number) => $carry + $number);
 
 // var_dump($sum);
+
+
+//* OVERRIDING AND DUPLICATION
+
+//Play around with data types of the keys to see the paradox.
+
+// In PHP, when an array is created with keys that are not integers, the keys are automatically cast to either integers or strings based on certain rules. In this case, since the keys in the array $arrTest are a mix of booleans and strings, they will be cast to integers or strings based on the following rules:
+
+// Boolean keys true and false will be cast to integers 1 and 0, respectively.
+// String keys that can be cast to integers will be cast to integers.
+// String keys that cannot be cast to integers will be used as strings.
+
+$arrTest = [true => 'a', false => 'b', '1'=> 'c', true => 'd'];
+
+/*
+  in this case,
+
+  - true[1] => a
+  - false[0] = b
+  - '1'[1] = c
+  - true[1] = d
+
+  since we have duplicate keys, only the last one is pertained.
+
+ */
+
+print_r($arrTest);
