@@ -109,6 +109,28 @@ $sum = array_reduce($arrNumbers, fn ($carry, $number) => $carry + $number);
 
 // var_dump($sum);
 
+//*------------- Range
+
+/**
+ * @param 1 - start
+ * @param 2 - end
+ * @param 3 - getting odds (optional)
+ */
+
+
+
+$nums = range(1, 10, 3);
+
+$letters = range('a', 'z', 2);
+
+print_r($nums);
+print_r($letters);
+
+
+
+
+
+//-------------------- ADVANCED
 
 //* OVERRIDING AND DUPLICATION
 
@@ -142,6 +164,6 @@ $arrTest2 = [true => 'a', false => 'b', '1'=> null];
 
 
 
-var_dump(array_key_exists('1', $arrTest2));//RETURNS TRUE
+// var_dump(array_key_exists('1', $arrTest2));//RETURNS TRUE
 
-var_dump(isset($arrTest2['1'])); //HERE RETURN FALSE because the value is null.
+// var_dump(isset($arrTest2['1'])); //HERE RETURN FALSE because the value is null.

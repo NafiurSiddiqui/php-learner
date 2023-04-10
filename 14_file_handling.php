@@ -8,7 +8,7 @@
 
 $file = 'extras/existential.txt';
 
-if(file_exists($file)){
+if(file_exists($file)) {
     //Additional integer is the number of Bytes of the file.
     // echo readfile($file);
     $handle = fopen($file, 'r') ;
@@ -18,7 +18,7 @@ if(file_exists($file)){
     fclose($handle);
 
     echo $contents;
-}else{
+} else {
     //if the file does not exist.craetes one.
 
     $handle = fopen($file, 'w');
