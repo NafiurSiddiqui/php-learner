@@ -81,35 +81,7 @@ $arrFlipped = array_flip($c);
 
 // print_r($arrFlipped);
 
-//*------------------ array of numbers
-
-$arrNumbers = range(1, 20); //FILSS in the array with these numbers
-
-// print_r($arrNumbers);
-
-//*----------------- Map arrays
-
-$newNumbers = array_map(function ($number) {
-
-    return "Number $number";
-}, $arrNumbers);
-
-// print_r($newNumbers);
-
-//*--------------- Filter
-
-$lessThan10 = array_filter($arrNumbers, fn ($number) => $number < 10);
-
-// print_r($lessThan10);
-
-
-//*--------------- REDUCE
-
-$sum = array_reduce($arrNumbers, fn ($carry, $number) => $carry + $number);
-
-// var_dump($sum);
-
-//*------------- Range
+//*------------------ range
 
 /**
  * @param 1 - start
@@ -123,8 +95,74 @@ $nums = range(1, 10, 3);
 
 $letters = range('a', 'z', 2);
 
-print_r($nums);
-print_r($letters);
+// print_r($nums);
+// print_r($letters);
+
+
+//*----------------- Map arrays
+
+$newNumbers = array_map(function ($number) {
+
+    return "Number $number";
+}, $nums);
+
+// print_r($newNumbers);
+
+//*--------------- Filter
+
+$lessThan10 = array_filter($nums, fn ($number) => $number < 10);
+
+// print_r($lessThan10);
+
+
+//*--------------- REDUCE
+
+$sum = array_reduce($nums, fn ($carry, $number) => $carry + $number);
+
+// var_dump($sum);
+
+//*-------- SORT
+
+$items = [
+    ['name' => 'Pizza', 'icon' => '🍕'],
+    ['name' => 'Pasta', 'icon' => '🍝'],
+    ['name' => 'Minestrone', 'icon' => '🍜']
+];
+
+
+// sort($items);
+// asort($items);
+// ksort($items);
+// print_r($items);
+
+
+//* -------- Multi-sort
+
+array_multisort($items);
+
+// print_r($items);
+
+
+//*---- array_walk
+
+function test_alter(&$item1, $key, $prefix)
+{
+    $item1 = "$prefix: $item1";
+}
+
+function test_print($item2, $key)
+{
+    // echo "$key. $item2<br>";
+}
+
+// echo "Before ...:<br>";
+array_walk($fruits, 'test_print');
+
+array_walk($fruits, 'test_alter', 'fruit');
+// echo "... and after:<br>";
+
+// array_walk($fruits, 'test_print');
+
 
 
 
@@ -143,6 +181,9 @@ print_r($letters);
 // String keys that cannot be cast to integers will be used as strings.
 
 $arrTest = [true => 'a', false => 'b', '1'=> null, true => 'd'];
+
+
+
 
 /*
   in this case,

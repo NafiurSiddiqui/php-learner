@@ -1,67 +1,111 @@
 <?php
 
-    $string = 'Hello World';
+$string = 'Hello World';
 
 
-    //*------- Length
+//*------- Length
 
-    // echo strlen($string);
+// echo strlen($string);
 
-    //*------ index of first occurance
+//*------ index of first occurance
 
-    // echo stripos($string, 'e');
+// echo stripos($string, 'e');
 
-    //*------ index of last occurance
+//*------ index of last occurance
 
-    // echo strrpos($string, 'l');
+// echo strrpos($string, 'l');
 
-    //*------ Reverse
+//*------ Reverse
 
-    // echo strrev($string);
+// echo strrev($string);
 
-    //*----- To lower case
+//*----- To lower case
 
-    // echo strtolower($string);
+// echo strtolower($string);
 
-    //*----- To upper case
+//*----- To upper case
 
-    // echo strtoupper($string);
+// echo strtoupper($string);
 
-    //*------ uppercase of firt char each word
+//*------ uppercase of firt char each word
 
-    // echo ucwords($string);
+// echo ucwords($string);
 
-    //*---- Replace
+//*---- Replace
 
-    // echo str_replace('World', 'Fellas', $string);
+// echo str_replace('World', 'Fellas', $string);
 
-    //*---- Returns portion of the string specified by the offest and length
+//*---- Returns portion of the string specified by the offest and length
 
-    // echo substr($string, 0, 5);
-    // echo substr($string, 5);
-
-
-    //*------ starts with
-
-    // echo str_starts_with($string, 'Trello'); // return 1 or nothing.
-
-    //*--------- ends with
-
-    // echo str_ends_with($string, 'ld');
+// echo substr($string, 0, 5);
+// echo substr($string, 5);
 
 
-    //*-------- Security
+//*------ starts with
 
-    //in a case where someone puts a script tag inside HTML, you can prevent them by wrapping it with the method below
+// echo str_starts_with($string, 'Trello'); // return 1 or nothing.
 
-    $string = '<script> alert("hacker alert") </script>';
+//*--------- ends with
 
-    // echo $string; // runs the script
-
-    // echo htmlspecialchars($string); //parses as HTML
+// echo str_ends_with($string, 'ld');
 
 
-    // printf('%s likes to %s', 'Eddie', 'Code'); 
-    //%s = the format you know from C.
+//*-------- Security
+
+//in a case where someone puts a script tag inside HTML, you can prevent them by wrapping it with the method below
+
+$string = '<script> alert("hacker alert") </script>';
+
+// echo $string; // runs the script
+
+// echo htmlspecialchars($string); //parses as HTML
+
+
+// printf('%s likes to %s', 'Eddie', 'Code');
+//%s = the format you know from C.
+
+// printf('5+5=%d', 5 + 5);
+
+
+//*------------ Tokeinization ( strtok )
+
+//Splits stings into separate part.
+
+$feedback = "Your Delivery service is excellent!";
     
-    // printf('5+5=%d', 5 + 5);
+
+$token = strtok($feedback, " ");
+
+
+
+while ($token != "") {
+    // echo $token."<br />";
+    $token = strtok(" ");
+}
+
+
+//*------------------ stristr, strstr
+
+//Searches for particular word in a string.
+
+
+/**
+ *  strstr - case-sensitive
+ * stristr - not case-sensitive
+ */
+
+// Change the $toaddress if the criteria are met
+if (stristr($feedback, 'shop')) {
+
+    echo "Needs to go to retailer";
+} elseif (stristr($feedback, 'delivery')) {
+    echo "Needs to go to delivery!";
+
+} elseif (stristr($feedback, 'bill')) {
+    echo "Needs to go to Accounting dept.";
+
+}
+
+// echo $toaddress;
+
+

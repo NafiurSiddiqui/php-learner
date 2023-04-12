@@ -47,6 +47,22 @@ function testScope()
     return $whatHappens;
 }
 
-echo testScope();
-echo '<br>';
-echo testScope();
+// echo testScope();
+// echo '<br>';
+// echo testScope();
+
+//* ------------- Get function args
+
+
+function var_args($x = '', $y = '')
+{
+    echo 'Number of parameters:';
+    echo func_num_args();
+    echo '<br />';
+    $args = func_get_args();
+    foreach ($args as $arg) {
+        echo $arg.'<br />';
+    }
+}
+
+var_args('a', 'b');
