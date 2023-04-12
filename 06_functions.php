@@ -78,6 +78,57 @@ function funk()
 }
 $var = 1;
 
-funk();
+// funk();
 
-echo 'outside the function, $var = '.$var.'<br />';
+// echo 'outside the function, $var = '.$var.'<br />';
+
+
+//*------------ param by ref or value
+
+
+//BY VALUE
+
+function increment($value, $amount = 1)
+{
+
+    $value = $value + $amount; //will never point to the global var.
+}
+
+$value = 10;
+increment($value);
+// echo "{$value} <br>"; //remains unchanged
+
+
+//By ref
+function increment2(&$value, $amount = 1)
+{
+
+    $value = $value + $amount; //now points to the global var.
+}
+
+$value = 10;
+increment2($value);
+// echo $value; //changes
+
+//*----------- Recursion PHP
+
+
+function reverse_r($str)
+{
+    if (strlen($str)>0) {
+        reverse_r(substr($str, 1));
+    }
+    echo substr($str, 0, 1);
+    return;
+}
+
+function reverse_i($str)
+{
+    for ($i=1; $i<=strlen($str); $i++) {
+        echo substr($str, -$i, 1);
+    }
+    return;
+}
+reverse_r('Hello');
+echo '<br />';
+reverse_i('Hello');
