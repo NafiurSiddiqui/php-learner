@@ -65,4 +65,19 @@ function var_args($x = '', $y = '')
     }
 }
 
-var_args('a', 'b');
+// var_args('a', 'b');
+
+//*----------- More on scope
+
+
+function funk()
+{
+    echo 'inside the function, at first $var = '.$var.'<br />'; //has no access to globall var
+    $var = 2;
+    echo 'then, inside the function, $var = '.$var.'<br />'; //has access to local
+}
+$var = 1;
+
+funk();
+
+echo 'outside the function, $var = '.$var.'<br />';
