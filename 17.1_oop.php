@@ -70,3 +70,5 @@ echo "<br>";
 $italianPizza = new Pizza("Italian Pizza", "Pizza", 23.23);
 
 echo $italianPizza->get_info();
+
+$italianPizza->showItem("Italian Pizza");
