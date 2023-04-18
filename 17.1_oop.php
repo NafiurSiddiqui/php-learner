@@ -37,38 +37,9 @@ class Burger extends Food
 
 $hamburger = new Burger("Hamburger", "Burger", 11.83);
 
-echo $hamburger->get_info();
+// echo $hamburger->get_info();
 
 // $hamburger->get_info();
 // $hamburger->get_name();
 
 
-//*___________ Interface
-
-//A WORKAROUND FOR MULTIPLE INHERITENCE.
-
-interface displayItem
-{
-    public function showItem(string $text = null);
-
-}
-
-class Pizza extends Food implements displayItem
-{
-
-    private string $name = '';
-
-
-
-    public function showItem(?string $text = null)
-    {
-        echo "You ordered a {$text}";
-    }
-}
-echo "<br>";
-
-$italianPizza = new Pizza("Italian Pizza", "Pizza", 23.23);
-
-echo $italianPizza->get_info();
-
-$italianPizza->showItem("Italian Pizza");
