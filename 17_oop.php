@@ -215,20 +215,44 @@ class B extends A
     }
 }
 
-A::test();//A
-B::test();//A without `late static binding`
+// A::test();//A
+// B::test();//A without `late static binding`
 
 //Toggle static call on A to call the funcion on B on runtime. Not from memory.
 
 
 
-//---------STD CLASS
+//---------STD CLASS (OBJ)
 
 
-$arr = '{"a":1, "b": 2, "c":3}';
+$jsData = '{"a":1, "b": 2, "c":3}';
+// $jsData2 = '{"a":1, "b": 2, "c":3}';
 
-$x = json_decode($arr, true);
+$newAssocArr = json_decode($jsData, true);// True = ASSOC_ARR
+$std = json_decode($jsData); //now this is an STD CLASS
 
-var_dump($x);
+// var_dump($newAssocArr['a']); //ASSOC_ARRAY
+// var_dump($std->a); //OBJ
 
-// echo $x;
+
+//CREATE CUSTOM OBJ
+
+//Manual creation of object in PHP
+
+$home = new \stdClass();
+
+$home->color = 'skyblue';
+$home->rooms = ['bedroom', 'living room'];
+
+// var_dump($home);
+
+
+//TYPE CASTING
+
+$arr = [1,2,3,4];
+
+$arrToObj = (object) $arr;
+
+
+var_dump($arrToObj);
+var_dump($arrToObj->{2}); //ACCESSING OBJ PROPS
