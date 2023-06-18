@@ -219,3 +219,16 @@ A::test();//A
 B::test();//A without `late static binding`
 
 //Toggle static call on A to call the funcion on B on runtime. Not from memory.
+
+
+
+//---------STD CLASS
+
+
+$arr = '{"a":1, "b": 2, "c":3}';
+
+$x = json_decode($arr, true);
+
+var_dump($x);
+
+// echo $x;
