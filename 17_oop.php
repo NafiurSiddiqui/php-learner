@@ -84,16 +84,13 @@ $employee = new employee('Sara', 'sara@gmail', '1234', 'Manager');
 
 // echo $employee->get_title();
 
-
-
-
-
 class Food
 {
     private string $category;
     private string $parentName;
     private string $name;
     private int|float $price;
+    
 
     public function __construct($name, $category, $price)
     {
@@ -254,5 +251,70 @@ $arr = [1,2,3,4];
 $arrToObj = (object) $arr;
 
 
-var_dump($arrToObj);
-var_dump($arrToObj->{2}); //ACCESSING OBJ PROPS
+// var_dump($arrToObj);
+// var_dump($arrToObj->{2}); //ACCESSING OBJ PROPS
+
+
+
+//NULLSAFE OPERATOR
+
+//if we have three class - PaymentProfile, Customer, Transaction
+
+class PaymentProfile
+{
+    public int $id;
+
+    public function __construct()
+    {
+        $this->id = rand();
+    }
+}
+
+
+class Customer
+{
+    public ?PaymentProfile $paymentProfile = null;
+    //? means that this is nullable type
+
+}
+
+
+//CONSTRUCTOR PROPERTY PROMOTION
+
+class Transaction
+{
+    private ?string $description = null; //CLASS PROP
+    public ?Customer $customer = null;
+    //Allows you to directly init and assign property in the constructor.
+ 
+
+    public function __construct(
+        private float $amount, //PROMOTED PROP
+        ?string $description
+    ) {
+        /**
+         * This way we do not have to init a class prop and the assing the value from here.
+         * you can combine class and promoted prop together.
+         */
+
+        $this->description = $description;
+
+        //ACCESS: either by `this` or direct variable.
+     
+        // var_dump($amount); //works
+        // var_dump($this->amount);//works
+    }
+
+}
+
+$transaction = new Transaction(5.00, null);
+
+// echo $transaction->customer->PaymentProfile->id; //Customer is null, get error
+
+echo $transaction->customer?->paymentProfile?->id;
+
+//NOTE: in this case we can use NULL Coalescing operator as well
+
+echo $transaction->customer?->paymentProfile?->id ?? "Alright!";
+
+//But in some cases,like on methods(), null coalescing does not work. In that scenario, we can use Nullsafe operator.
